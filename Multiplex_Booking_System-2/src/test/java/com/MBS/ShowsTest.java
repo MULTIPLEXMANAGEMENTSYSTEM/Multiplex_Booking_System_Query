@@ -13,7 +13,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 
 import com.MBS.Model.Shows;
 import com.MBS.Repository.ShowsRepo;
-import com.MBS.Service.ShowsService;
+import com.MBS.Service.UserService;
 
 @SpringBootTest
 public class ShowsTest {
@@ -22,7 +22,7 @@ public class ShowsTest {
 	private ShowsRepo repo;
 
 	@Autowired
-	private ShowsService service;
+	private UserService service;
 
 	@Test
 	public void getByShowId() {

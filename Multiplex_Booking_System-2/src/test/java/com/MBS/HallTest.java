@@ -12,7 +12,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 
 import com.MBS.Model.Hall;
 import com.MBS.Repository.HallRepo;
-import com.MBS.Service.HallService;
+import com.MBS.Service.UserService;
 
 @SpringBootTest
 public class HallTest {
@@ -21,7 +21,7 @@ public class HallTest {
 	private HallRepo repo2;
 
 	@Autowired
-	private HallService service2;
+	private UserService service;
 
 	@Test
 	public void getByHallId() {
@@ -29,7 +29,7 @@ public class HallTest {
 		Hall hl = new Hall(hallId, "AA", 120);
 		Optional<Hall> s = Optional.of(hl);
 		when(repo2.findById(hallId)).thenReturn(s);
-		assertEquals(true, service2.findByHallId(hallId).isPresent());
+		assertEquals(true, service.findByHallId(hallId).isPresent());
 
 	}
 

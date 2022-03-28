@@ -17,7 +17,7 @@ import com.MBS.Model.Hall;
 import com.MBS.Model.Movies;
 import com.MBS.Model.Shows;
 import com.MBS.Repository.MoviesRepo;
-import com.MBS.Service.MoviesService;
+import com.MBS.Service.UserService;
 
 @SpringBootTest
 public class MoviesTest {
@@ -26,7 +26,7 @@ public class MoviesTest {
 	private MoviesRepo repo1;
 
 	@Autowired
-	private MoviesService service1;
+	private UserService service;
 
 	@Test
 	public void getShowsByMovieName() {
@@ -41,7 +41,7 @@ public class MoviesTest {
 		m1.add(ms);
 		when(repo1.findByMovieName("RRR")).thenReturn(m1);
 
-		assertEquals(1, service1.findByMovieName("RRR").size());
+		assertEquals(1, service.findByMovieName("RRR").size());
 	}
 
 }

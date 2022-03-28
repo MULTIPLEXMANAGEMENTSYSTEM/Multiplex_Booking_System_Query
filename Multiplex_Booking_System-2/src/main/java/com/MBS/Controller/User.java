@@ -15,16 +15,14 @@ import com.MBS.Exception.ResourceNotFoundException;
 import com.MBS.Model.Hall;
 import com.MBS.Model.Movies;
 import com.MBS.Model.Shows;
-import com.MBS.Service.HallService;
-import com.MBS.Service.MoviesService;
-import com.MBS.Service.ShowsService;
+import com.MBS.Service.UserService;
 
 @RestController
 @RequestMapping("/query")
 public class User {
 
 	@Autowired
-	ShowsService service;
+	UserService service;
 
 	@GetMapping("/fecthByShowId/{showId}")
 	public ResponseEntity<Optional<Shows>> findByShowId(@PathVariable int showId) {
@@ -35,12 +33,9 @@ public class User {
 		return new ResponseEntity<Optional<Shows>>(obj, HttpStatus.OK);
 	}
 
-	@Autowired
-	MoviesService service1;
-
 	@GetMapping("/fetchByMovieName/{movieName}")
 	public ResponseEntity<List<Movies>> findByMovieName(@PathVariable String movieName) {
-		List<Movies> obj = service1.findByMovieName(movieName);
+		List<Movies> obj = service.findByMovieName(movieName);
 		if (obj.isEmpty()) {
 			throw new ResourceNotFoundException("Invalid movie name,enter valid name");
 		}
@@ -48,12 +43,9 @@ public class User {
 
 	}
 
-	@Autowired
-	HallService service2;
-
 	@GetMapping("/fecthByHallId/{hallId}")
 	public ResponseEntity<Optional<Hall>> findByHallId(@PathVariable int hallId) {
-		Optional<Hall> obj = service2.findByHallId(hallId);
+		Optional<Hall> obj = service.findByHallId(hallId);
 		if (obj.isEmpty()) {
 			throw new ResourceNotFoundException("Invalid hall Id,enter valid Id");
 		}
