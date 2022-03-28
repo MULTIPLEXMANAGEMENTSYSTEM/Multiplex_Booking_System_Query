@@ -21,7 +21,7 @@ import com.MBS.Service.MoviesService;
 
 @SpringBootTest
 public class MoviesTest {
-	
+
 	@MockBean
 	private MoviesRepo repo1;
 
@@ -30,9 +30,10 @@ public class MoviesTest {
 
 	@Test
 	public void getShowsByMovieName() {
-		Movies m=new Movies("RRR");
-		Hall h=new Hall("AA");
-		Shows sh = new Shows(21,h,m,LocalDate.parse("2022-03-23"),LocalDate.parse("2022-04-30"),LocalTime.parse("18:00:00"),LocalTime.parse("21:00:00"));
+		Movies m = new Movies("RRR");
+		Hall h = new Hall("AA");
+		Shows sh = new Shows(21, h, m, LocalDate.parse("2022-03-23"), LocalDate.parse("2022-04-30"),
+				LocalTime.parse("18:00:00"), LocalTime.parse("21:00:00"));
 		List<Shows> s = new ArrayList<>();
 		s.add(sh);
 		Movies ms = new Movies(1, "RRR", s);

@@ -15,28 +15,23 @@ import com.MBS.Model.Shows;
 import com.MBS.Repository.ShowsRepo;
 import com.MBS.Service.ShowsService;
 
-
 @SpringBootTest
 public class ShowsTest {
 
-	
 	@MockBean
 	private ShowsRepo repo;
-	
+
 	@Autowired
 	private ShowsService service;
-	
+
 	@Test
 	public void getByShowId() {
-		int showId=21;
+		int showId = 21;
 		Shows sh = new Shows(showId, LocalDate.parse("2022-03-31"));
-		Optional<Shows> s=Optional.of(sh);
+		Optional<Shows> s = Optional.of(sh);
 		when(repo.findById(showId)).thenReturn(s);
-		assertEquals(true,service.findByShowId(showId).isPresent());
-		
+		assertEquals(true, service.findByShowId(showId).isPresent());
+
 	}
-	
-	
 
 }
-

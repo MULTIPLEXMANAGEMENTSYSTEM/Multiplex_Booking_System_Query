@@ -10,12 +10,12 @@ import com.MBS.Repository.ShowsRepo;
 
 @Service
 public class ShowsService {
-	
+
 	@Autowired
 	ShowsRepo repo;
-	
+
 	public Optional<Shows> findByShowId(int showId) {
 		return repo.findById(showId);
 	}
-	
+
 }

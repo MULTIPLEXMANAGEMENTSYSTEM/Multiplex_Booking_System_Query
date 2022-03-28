@@ -6,8 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.MBS.Model.Shows;
 
 @Repository
-public interface ShowsRepo extends JpaRepository<Shows,Integer>{
-
-
+public interface ShowsRepo extends JpaRepository<Shows, Integer> {
 
 }

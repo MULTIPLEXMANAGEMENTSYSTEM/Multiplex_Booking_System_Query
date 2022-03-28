@@ -23,8 +23,6 @@ public class Hall {
 
 	@OneToOne(mappedBy = "hall")
 	private Shows shows;
-	
-	
 
 	public int getHallId() {
 		return hallId;
@@ -63,7 +61,6 @@ public class Hall {
 		super();
 	}
 
-
 	public Hall(int hallId, String hallName, int totalCapacity) {
 		super();
 		this.hallId = hallId;
@@ -71,7 +68,4 @@ public class Hall {
 		this.totalCapacity = totalCapacity;
 	}
 
-	
-	
 }
-

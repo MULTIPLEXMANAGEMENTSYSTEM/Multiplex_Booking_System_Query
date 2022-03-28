@@ -16,22 +16,21 @@ import com.MBS.Service.HallService;
 
 @SpringBootTest
 public class HallTest {
-	
 
 	@MockBean
 	private HallRepo repo2;
-	
+
 	@Autowired
 	private HallService service2;
-	
+
 	@Test
 	public void getByHallId() {
-		int hallId=12;
-		Hall hl = new Hall(hallId,"AA",120);
-		Optional<Hall> s=Optional.of(hl);
+		int hallId = 12;
+		Hall hl = new Hall(hallId, "AA", 120);
+		Optional<Hall> s = Optional.of(hl);
 		when(repo2.findById(hallId)).thenReturn(s);
-		assertEquals(true,service2.findByHallId(hallId).isPresent());
-		
+		assertEquals(true, service2.findByHallId(hallId).isPresent());
+
 	}
 
 }

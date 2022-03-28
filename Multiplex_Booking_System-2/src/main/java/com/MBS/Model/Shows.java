@@ -85,8 +85,6 @@ public class Shows {
 		this.endTime = endTime;
 	}
 
-	
-
 	public Shows(int showId, Hall hall, Movies movies, LocalDate fromDate, LocalDate toDate, LocalTime startTime,
 			LocalTime endTime) {
 		super();
@@ -108,8 +106,5 @@ public class Shows {
 		this.showId = showId;
 		this.fromDate = fromDate;
 	}
-
-	
-	
 
 }

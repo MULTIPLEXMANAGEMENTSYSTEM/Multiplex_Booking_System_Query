@@ -10,12 +10,12 @@ import com.MBS.Repository.MoviesRepo;
 
 @Service
 public class MoviesService {
-	
+
 	@Autowired
 	MoviesRepo repo;
-	
-	public List<Movies> findByMovieName(String movieName) { 
-		return repo.findByMovieName(movieName); 
-		}
+
+	public List<Movies> findByMovieName(String movieName) {
+		return repo.findByMovieName(movieName);
+	}
 
 }

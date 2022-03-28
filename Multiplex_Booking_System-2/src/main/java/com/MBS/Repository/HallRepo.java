@@ -6,7 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.MBS.Model.Hall;
 
 @Repository
-public interface HallRepo extends JpaRepository<Hall,Integer>{
-	
+public interface HallRepo extends JpaRepository<Hall, Integer> {
 
 }

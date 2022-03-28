@@ -8,8 +8,8 @@ import org.springframework.stereotype.Repository;
 import com.MBS.Model.Movies;
 
 @Repository
-public interface MoviesRepo extends JpaRepository<Movies,Integer>{
-	
+public interface MoviesRepo extends JpaRepository<Movies, Integer> {
+
 	List<Movies> findByMovieName(String movieName);
 
 }
